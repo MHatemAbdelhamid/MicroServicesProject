@@ -9,6 +9,7 @@ COPY package*.json ./
 RUN npm ci
 # Bundle app source
 COPY . .
+RUN npm install --save-dev node-sass
 RUN ionic build
 
 ## Run 

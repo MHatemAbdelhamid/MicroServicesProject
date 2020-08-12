@@ -6,6 +6,10 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 RUN npm ci 
+RUN npm uninstall bcrypt
+RUN npm i node-pre-gyp
+RUN npm i bcrypt@latest --save
+
 # Bundle app source
 COPY . .
 EXPOSE 8080
